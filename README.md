@@ -1,7 +1,5 @@
 # PAO: Resilient AI Resume & Lead Intelligence System
 
-![PAO Logo](pao_job_seeker_demo.webp)
-
 PAO is a high-fidelity, production-hardened platform designed to automate the job search lifecycle. By combining **Knowledge Graph Networking** with **Generative AI**, PAO transforms how you manage professional relationships, track job leads, and generate tailored, ROI-driven resumes.
 
 ## 🚀 Key Features
