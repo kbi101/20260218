@@ -37,29 +37,59 @@ erDiagram
         bigint id PK
         varchar name
         varchar type
-        varchar industry
+        varchar website
     }
     RELATIONSHIP {
         bigint id PK
         varchar type
         bigint source_person_id FK
         bigint target_person_id FK
+        bigint source_organization_id FK
+        bigint target_organization_id FK
+    }
+    RELATIONSHIP_TYPE {
+        bigint id PK
+        varchar name UK
+        varchar category
+    }
+    JOB_PROFILE {
+        bigint id PK
+        varchar title
+        varchar target_industry
+    }
+    JOB_OPPORTUNITY {
+        bigint id PK
+        varchar status
+        bigint organization_id FK
+        bigint job_profile_id FK
     }
     RESUME_SNIPPET {
         bigint id PK
         varchar type
         text briefing
         text roi
+        bigint person_id FK
     }
-    JOB_OPPORTUNITY {
+    RESUME {
         bigint id PK
-        varchar status
-        bigint organization_id FK
+        varchar name
+        text content
+        bigint person_id FK
+    }
+    COMMUNICATION {
+        bigint id PK
+        varchar type
+        bigint job_opportunity_id FK
     }
     
-    PERSON ||--o{ RELATIONSHIP : "is source"
+    PERSON ||--o{ RELATIONSHIP : "is source/target"
     PERSON ||--o{ RESUME_SNIPPET : "owns"
+    PERSON ||--o{ RESUME : "owns versions"
+    ORGANIZATION ||--o{ RELATIONSHIP : "is source/target"
     ORGANIZATION ||--o{ JOB_OPPORTUNITY : "targets"
+    RELATIONSHIP_TYPE ||--o{ RELATIONSHIP : "defines"
+    JOB_PROFILE ||--o{ JOB_OPPORTUNITY : "belongs to"
+    JOB_OPPORTUNITY ||--o{ COMMUNICATION : "logs"
 ```
 
 ## 3. Resilience & Hardening
