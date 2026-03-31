@@ -1,0 +1,25 @@
+# PAO Git Ignore
+
+# Local Environment
+.env.local
+.env
+
+# Build Artifacts
+pao-backend/target/
+pao-frontend-react/dist/
+pao-frontend-react/node_modules/
+node_modules/
+
+# Database (Demo state preserved via seeding script)
+data/*.db
+data/*.sqlite
+
+# Logs & OS
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Docker build cache & temp
+docker-build-cache/
+tmp/

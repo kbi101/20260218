@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --secondary: #64748b;
+  --accent: #f59e0b;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --column-bg: #f1f5f9;
+  --border: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+  --sidebar-width: 260px;
+  --navbar-height: 64px;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --radius: 0.75rem;
+  --glow: none;
+}
+
+[data-theme='dark'] {
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --secondary: #94a3b8;
+  --accent: #fbbf24;
+  --background: #0f172a;
+  --surface: #1e293b;
+  --column-bg: #111827; 
+  --border: #334155;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+}
+
+[data-theme='neon'] {
+  --primary: #22c55e;
+  --primary-hover: #16a34a;
+  --secondary: #a855f7;
+  --accent: #ec4899;
+  --background: #020617;
+  --surface: #0f172a;
+  --column-bg: #1e293b;
+  --border: #22c55e;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+  --shadow: 0 0 15px color-mix(in srgb, var(--primary), transparent 80%);
+}
+
+[data-theme='neon-glow'] {
+  --primary: #00ffcc; /* Electric Cyan */
+  --primary-hover: #00d9ad;
+  --secondary: #ff00ff; /* Electric Pink */
+  --accent: #ffff00; /* Neon Yellow */
+  --background: #000000;
+  --surface: #111111;
+  --column-bg: #050505;
+  --border: #00ffcc;
+  --text-main: #ffffff;
+  --text-muted: #cccccc;
+  --text-light: #999999;
+  --glow: 0 0 8px color-mix(in srgb, var(--primary), transparent 20%);
+  --shadow: 0 0 20px color-mix(in srgb, var(--primary), transparent 70%);
+  --shadow-lg: 0 0 30px color-mix(in srgb, var(--primary), transparent 60%);
+}
+
+/* Neon Glow Specific Global Styles */
+[data-theme='neon-glow'] body {
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='neon-glow'] input:focus, 
+[data-theme='neon-glow'] button:hover {
+  box-shadow: 0 0 15px var(--primary);
+  text-shadow: 0 0 5px var(--primary);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--border), transparent 50%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border);
+}

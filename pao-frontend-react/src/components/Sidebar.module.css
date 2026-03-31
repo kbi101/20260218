@@ -1,0 +1,207 @@
+.logo {
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0 0.25rem;
+  text-decoration: none;
+}
+
+.logoImg {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logoImg {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.appName {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.appSubtitle {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  transition: var(--transition);
+  padding: 1.5rem 1rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.navItem:hover {
+  background-color: var(--background);
+  color: var(--primary);
+}
+
+.navItemActive {
+  background-color: color-mix(in srgb, var(--primary), transparent 92%);
+  color: var(--primary);
+  border-right: 2px solid var(--primary);
+}
+
+.navFooter {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: auto;
+}
+
+.switchClassic {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  color: var(--text-light);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: var(--transition);
+  opacity: 0.8;
+}
+
+.switchClassic:hover {
+  opacity: 1;
+  background-color: var(--background);
+  color: var(--secondary);
+}
+.logoOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(9, 13, 20, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.logoModal {
+  position: relative;
+  background-color: var(--surface);
+  padding: 3rem;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  max-width: 90vw;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border);
+}
+
+.logoLarge {
+  width: 280px;
+  height: 280px;
+  border-radius: 48px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.logoModalText {
+  text-align: center;
+}
+
+.logoModalText h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.logoModalText p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--background);
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background-color: var(--danger);
+  color: white;
+  transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
