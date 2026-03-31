@@ -4,7 +4,12 @@ PAO (Professional AI Orchestrator) is a high-fidelity, production-hardened platf
 
 ## 🚀 Key Features
 
-### 1. Lead Intelligence Command Center
+### 1. Command Center Dashboard
+Get a high-level overview of your job search health, including lead metrics, upcoming interviews, and recently tailored resume versions.
+
+![Dashboard Overview](./docs/assets/dashboard_overview.png)
+
+### 2. Lead Intelligence Command Center
 PAO automatically scrapes and extracts technical requirements from job URLs, allowing you to manage your pipeline across distinct phases.
 
 ![Leads Board](./docs/assets/leads_board.png)
