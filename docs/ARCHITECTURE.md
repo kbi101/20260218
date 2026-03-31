@@ -138,12 +138,15 @@ graph LR
     Repo --> DB[(SQLite / PostgreSQL)]
     
     AI --> Provider[Gemini / Ollama Failover]
+    Service --> MCP[MCP / External Integration Layer]
+    MCP --> Enrichment[Person/Org Enrichment APIs]
 ```
 
 ### **Key Service Modules**
 1. **Network Intelligence Hub**: Manages complex graph relationships and recruiter-to-organization mapping.
-2. **Resume Generator Service**: Orchestrates the synthesis of ROI snippets into markdown-formatted resumes.
-3. **Resilience Engine**: Implements the dual-layer AI failover logic and transaction-safe data seeding.
+2. **Knowledge Enrichment Engine**: Utilizes **Model Context Protocol (MCP)** and 3rd-party APIs (`PersonEnrichmentService`, `OrganizationEnrichmentService`) to dynamically augment entities with real-world professional metadata.
+3. **Resume Generator Service**: Orchestrates the synthesis of ROI snippets into markdown-formatted resumes.
+4. **Resilience Engine**: Implements the dual-layer AI failover logic and transaction-safe data seeding.
 
 ## 5. Resilience & Hardening
 
