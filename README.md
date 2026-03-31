@@ -19,7 +19,13 @@ Manage high-impact career snippets with automated technical tag extraction and R
 
 ![Resume Snippets](./docs/assets/resume_snippets.png)
 
-### 4. Master-Class Practice Mode
+### 4. Target-Oriented Resume Generation
+Select professional snippets and PAO will synthesize a cohesive, high-impact resume tailored specifically to a target job lead (e.g., ServiceTitan).
+
+![Tailored Resume Preview](./docs/assets/tailored_resume_preview.png)
+![Saved Resume Versions](./docs/assets/resume_version_saved.png)
+
+### 5. Master-Class Practice Mode
 Master your elevator pitch with a professional-grade, interactive teleprompter.
 
 ![Practice Mode](./docs/assets/practice_mode.png)
