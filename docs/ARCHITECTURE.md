@@ -92,7 +92,60 @@ erDiagram
     JOB_OPPORTUNITY ||--o{ COMMUNICATION : "logs"
 ```
 
-## 3. Resilience & Hardening
+## 3. Frontend Component Design (React Hub)
+
+The frontend is built on a modular, component-driven architecture designed for high-impact interactivity.
+
+### **Component Hierarchy**
+```mermaid
+graph TD
+    App[App.tsx] --> Layout[MainLayout.tsx]
+    Layout --> Nav[SideNavbar.tsx]
+    Layout --> Search[IntelligenceSearch.tsx]
+    
+    Layout --> Dashboard[DashboardPage.tsx]
+    Layout --> Leads[LeadsBoardPage.tsx]
+    Layout --> Network[IntelligenceHubPage.tsx]
+    Layout --> Prep[PrepPage.tsx]
+    Layout --> Resumes[ResumesPage.tsx]
+    
+    Leads --> LeadCard[LeadCard.tsx]
+    Network --> Graph[ProfessionalGraph.tsx]
+    Prep --> Teleprompter[Teleprompter.tsx]
+    Resumes --> Snippets[SnippetLibrary.tsx]
+    Resumes --> Compose[ComposeModal.tsx]
+    
+    Graph --> ReactFlow[ReactFlow Library]
+    Teleprompter --> Motion[Framer Motion]
+```
+
+### **Core UI Principles**
+- **Dynamic Caching**: TanStack Query manages all high-latency AI and scraping data fetches.
+- **Micro-Interactions**: All status transitions (Applied -> Interviewing) are handled with optimistic updates.
+- **Teleprompter Logic**: Native state-driven scrolling ensuring distraction-free practice.
+
+## 4. Backend Service Architecture (Spring Boot)
+
+The backend follows a clean, service-oriented design specialized in professional data orchestration.
+
+### **Service Layer Design**
+```mermaid
+graph LR
+    API[REST Controllers] --> Service[Service Layer]
+    Service --> AI[AIService / LLM Orchestration]
+    Service --> Scraper[ScrapeService / Jsoup]
+    Service --> Repo[Repository Layer / Spring Data JPA]
+    Repo --> DB[(SQLite / PostgreSQL)]
+    
+    AI --> Provider[Gemini / Ollama Failover]
+```
+
+### **Key Service Modules**
+1. **Network Intelligence Hub**: Manages complex graph relationships and recruiter-to-organization mapping.
+2. **Resume Generator Service**: Orchestrates the synthesis of ROI snippets into markdown-formatted resumes.
+3. **Resilience Engine**: Implements the dual-layer AI failover logic and transaction-safe data seeding.
+
+## 5. Resilience & Hardening
 
 PAO implements several production-grade hardening techniques:
 - **Environment Externalization**: All sensitive keys and service URLs are strictly loaded from `.env.local` or environment variables.
