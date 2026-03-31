@@ -55,7 +55,8 @@ PAO is a high-fidelity, production-hardened platform designed to automate the jo
 Detailed documentation for different audiences can be found in the [docs/](./docs) folder:
 - [Technical Architecture](./docs/ARCHITECTURE.md)
 - [User Guide](./docs/USER_GUIDE.md)
-- [Development & Deployment](./docs/DEVELOPMENT.md)
+- [Major Features Walkthrough](./docs/WALKTHROUGH.md)
+- [Development & Deployment](./docs/DEPLOYMENT.md)
 
 ---
 *Built with ❤️ for resilient AI-assisted career engineering.*
